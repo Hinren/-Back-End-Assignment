@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  myapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    environment:
+      - ConnectionStrings:MyDatabase=Server=mydb;Database=master;User=sa;Password=Your_password123;
+
+  mydb:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      SA_PASSWORD: "Your_password123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"

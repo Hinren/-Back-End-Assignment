@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoLocatorAPIHub.API", "GeoLocatorAPIHub\GeoLocatorAPIHub.API.csproj", "{D8165747-BA8B-4B09-8C06-9E1839D3CDFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{789978DA-FA3F-45DB-83CE-B3300014661E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoLocatorApiHub.Infrastructure", "GeoLocatorApiHub.Infrastructure\GeoLocatorApiHub.Infrastructure.csproj", "{9AD30CF4-066D-4BD0-8A76-B9CDFA32AFC5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoLocatorAPIHub.UnitTests", "GeoLocatorAPIHub.UnitTests\GeoLocatorAPIHub.UnitTests.csproj", "{FA26868E-67A3-4883-9151-08FBF1D8596E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoLocatorAPIHub.IntegrationTests", "GeoLocatorAPIHub.IntegrationTests\GeoLocatorAPIHub.IntegrationTests.csproj", "{FB4861A1-8CEC-4511-89B5-11C664A6C5BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoLocatorApiHub.Services", "GeoLocatorApiHub.Services\GeoLocatorApiHub.Services.csproj", "{48CAF404-DA9D-43A1-82E1-8570B3CD995C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoLocatorApiHub.Models", "GeoLocatorApiHub.Models\GeoLocatorApiHub.Models.csproj", "{7096EF7C-9306-4A78-9102-AB3945AC5701}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8165747-BA8B-4B09-8C06-9E1839D3CDFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8165747-BA8B-4B09-8C06-9E1839D3CDFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8165747-BA8B-4B09-8C06-9E1839D3CDFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8165747-BA8B-4B09-8C06-9E1839D3CDFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD30CF4-066D-4BD0-8A76-B9CDFA32AFC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD30CF4-066D-4BD0-8A76-B9CDFA32AFC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD30CF4-066D-4BD0-8A76-B9CDFA32AFC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD30CF4-066D-4BD0-8A76-B9CDFA32AFC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA26868E-67A3-4883-9151-08FBF1D8596E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA26868E-67A3-4883-9151-08FBF1D8596E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA26868E-67A3-4883-9151-08FBF1D8596E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA26868E-67A3-4883-9151-08FBF1D8596E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB4861A1-8CEC-4511-89B5-11C664A6C5BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB4861A1-8CEC-4511-89B5-11C664A6C5BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB4861A1-8CEC-4511-89B5-11C664A6C5BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB4861A1-8CEC-4511-89B5-11C664A6C5BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48CAF404-DA9D-43A1-82E1-8570B3CD995C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48CAF404-DA9D-43A1-82E1-8570B3CD995C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48CAF404-DA9D-43A1-82E1-8570B3CD995C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48CAF404-DA9D-43A1-82E1-8570B3CD995C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7096EF7C-9306-4A78-9102-AB3945AC5701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7096EF7C-9306-4A78-9102-AB3945AC5701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7096EF7C-9306-4A78-9102-AB3945AC5701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7096EF7C-9306-4A78-9102-AB3945AC5701}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FA26868E-67A3-4883-9151-08FBF1D8596E} = {789978DA-FA3F-45DB-83CE-B3300014661E}
+		{FB4861A1-8CEC-4511-89B5-11C664A6C5BB} = {789978DA-FA3F-45DB-83CE-B3300014661E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {104EEEE4-D926-4C61-B511-AEF958A83955}
+	EndGlobalSection
+EndGlobal
