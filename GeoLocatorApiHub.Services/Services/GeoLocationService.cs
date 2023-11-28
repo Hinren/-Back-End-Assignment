@@ -3,7 +3,6 @@ using GeoLocatorApiHub.Infrastructure.Repositories;
 using GeoLocatorApiHub.Models;
 using GeoLocatorApiHub.Services.Interfaces;
 using Mapster;
-using System.Net;
 using System.Text.Json;
 
 namespace GeoLocatorApiHub.Services.Services

@@ -18,16 +18,12 @@ namespace GeoLocatorAPIHub.IntegrationTests
         //[Fact]
         //public async Task GetAllGeoLocations_ReturnsOkResponse()
         //{
-        //    // Przyk³adowe IP dla testu
         //    var testIp = "127.0.0.1";
 
-        //    // Wykonaj ¿¹danie do API
         //    var response = await _client.GetAsync($"/api/geolocations/{testIp}");
 
-        //    // SprawdŸ, czy odpowiedŸ jest poprawna
         //    response.EnsureSuccessStatusCode();
 
-        //    // Mo¿esz tutaj dodaæ dodatkowe weryfikacje, np. sprawdziæ treœæ odpowiedzi
         //}
     }
 }

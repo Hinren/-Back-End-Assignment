@@ -70,7 +70,7 @@ namespace GeoLocatorAPIHub.UnitTests
         public async Task AddGeoLocation_ReturnsBadRequest_WhenExceptionThrown()
         {
             var ipOrUrl = "127.0.0.1";
-            var apiKey = "test-api-key"; // Przykładowy klucz API
+            var apiKey = "test-api-key";
 
             _mockGeoLocationService.Setup(s => s.AddGeoLocationAsync(ipOrUrl, It.IsAny<string>()))
                       .ThrowsAsync(new InvalidOperationException("Test Exception"));

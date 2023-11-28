@@ -1,13 +1,12 @@
-using GeoLocatorApiHub.Infrastructure.Entities;
+using AutoFixture;
 using GeoLocatorApiHub.Infrastructure;
+using GeoLocatorApiHub.Infrastructure.Entities;
 using GeoLocatorApiHub.Infrastructure.Repositories;
 using GeoLocatorApiHub.Models;
 using GeoLocatorApiHub.Services.Services;
 using Mapster;
 using Moq;
-using AutoFixture;
 using Moq.Protected;
-using System.Net.Http;
 using System.Net;
 using System.Text.Json;
 
@@ -140,7 +139,6 @@ namespace GeoLocatorAPIHub.UnitTests
             var apiKey = string.Empty;
             var fakeGeoLocation = _fixture.Create<GeoLocation>();
 
-            // Symulacja nieudanej odpowiedzi HTTP
             var fakeResponse = new HttpResponseMessage(HttpStatusCode.BadRequest) { Content = new StringContent("Bad Request") };
             var handlerMock = new Mock<HttpMessageHandler>();
             handlerMock
