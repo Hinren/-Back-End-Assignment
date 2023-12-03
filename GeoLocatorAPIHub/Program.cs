@@ -15,7 +15,7 @@ builder.Services.AddScoped<IGeoLocationService, GeoLocationService>();
 builder.Services.AddScoped<IGeoLocationRepository, GeoLocationRepository>();
 
 builder.Services.AddHttpClient();
-builder.Services.AddSingleton<MyExternalService>();
+builder.Services.AddSingleton<ApiKeyService>();
 builder.Services.AddDbContext<GeoLocatorApiHubContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

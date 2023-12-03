@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GeoLocatorApiHub.Common\GeoLocatorApiHub.Common.csproj" />
     <ProjectReference Include="..\GeoLocatorApiHub.Infrastructure\GeoLocatorApiHub.Infrastructure.csproj" />
     <ProjectReference Include="..\GeoLocatorApiHub.Services\GeoLocatorApiHub.Services.csproj" />
     <ProjectReference Include="..\GeoLocatorAPIHub\GeoLocatorAPIHub.API.csproj" />

@@ -1,4 +1,7 @@
-﻿using GeoLocatorApiHub.Models;
+﻿using GeoLocatorApiHub.Common.Exceptions;
+using GeoLocatorApiHub.Common.Validation;
+using GeoLocatorApiHub.Infrastructure.Repositories;
+using GeoLocatorApiHub.Models;
 using GeoLocatorApiHub.Services.Interfaces;
 using GeoLocatorApiHub.Services.Services;
 using GeoLocatorAPIHub.Controllers;
@@ -12,7 +15,7 @@ namespace GeoLocatorAPIHub.UnitTests
     {
         private readonly Mock<IGeoLocationService> _mockGeoLocationService;
         private readonly Mock<IConfiguration> _mockConfiguration;
-        private readonly MyExternalService _mockMyExternalService;
+        private readonly ApiKeyService _mockMyExternalService;
         private readonly GeoLocationController _controller;
 
         public GeoLocationControllerTests()
@@ -21,7 +24,7 @@ namespace GeoLocatorAPIHub.UnitTests
             _mockConfiguration = new Mock<IConfiguration>();
             _mockConfiguration.Setup(c => c["ExternalApiSettings:ApiKey"]).Returns("mock-api-key");
 
-            _mockMyExternalService = new MyExternalService(_mockConfiguration.Object);
+            _mockMyExternalService = new ApiKeyService(_mockConfiguration.Object);
             _controller = new GeoLocationController(_mockGeoLocationService.Object, _mockMyExternalService);
         }
 
@@ -82,14 +85,29 @@ namespace GeoLocatorAPIHub.UnitTests
         }
 
         [Fact]
-        public async Task AddGeoLocation_ReturnsBadRequest_ForInvalidIpAddress()
+        public async Task AddGeoLocationAsync_ThrowsBatchNotSupportedException_ForBatchInput()
         {
-            var invalidIp = "invalid-ip-address";
+            var mockGeoLocationRepository = new Mock<IGeoLocationRepository>();
+            var mockHttpClientFactory = new Mock<IHttpClientFactory>();
+            var geoLocationService = new GeoLocationService(mockGeoLocationRepository.Object, mockHttpClientFactory.Object);
 
-            var result = await _controller.AddGeoLocation(invalidIp);
+            var batchIps = "192.168.1.1,192.168.1.2";
 
-            var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
-            Assert.Equal("Provided string is not a valid IPv4 or IPv6 address.", badRequestResult.Value);
+            await Assert.ThrowsAsync<BatchNotSupportedException>(
+                async () => await geoLocationService.AddGeoLocationAsync(batchIps, null));
+        }
+
+        [Fact]
+        public async Task AddGeoLocationAsync_ThrowsInvalidIpAddressException_ForInvalidInput()
+        {
+            var mockGeoLocationRepository = new Mock<IGeoLocationRepository>();
+            var mockHttpClientFactory = new Mock<IHttpClientFactory>();
+            var geoLocationService = new GeoLocationService(mockGeoLocationRepository.Object, mockHttpClientFactory.Object);
+
+            var invalidIp = "invalid-ip";
+
+            await Assert.ThrowsAsync<InvalidIpAddressException>(
+                async () => await geoLocationService.AddGeoLocationAsync(invalidIp, null));
         }
 
         [Fact]

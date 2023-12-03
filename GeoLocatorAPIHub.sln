@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoLocatorApiHub.Services",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoLocatorApiHub.Models", "GeoLocatorApiHub.Models\GeoLocatorApiHub.Models.csproj", "{7096EF7C-9306-4A78-9102-AB3945AC5701}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLocatorApiHub.Common", "GeoLocatorApiHub.Common\GeoLocatorApiHub.Common.csproj", "{8EEA0834-4C16-4DA3-8FC4-2FD0D3C01570}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{7096EF7C-9306-4A78-9102-AB3945AC5701}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7096EF7C-9306-4A78-9102-AB3945AC5701}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7096EF7C-9306-4A78-9102-AB3945AC5701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EEA0834-4C16-4DA3-8FC4-2FD0D3C01570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEA0834-4C16-4DA3-8FC4-2FD0D3C01570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EEA0834-4C16-4DA3-8FC4-2FD0D3C01570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EEA0834-4C16-4DA3-8FC4-2FD0D3C01570}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

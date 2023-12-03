@@ -3,11 +3,11 @@ using Microsoft.Extensions.Configuration;
 
 namespace GeoLocatorApiHub.Services.Services
 {
-    public class MyExternalService : IMyExternalService
+    public class ApiKeyService : IApiKeyService
     {
         public readonly string? apiKey;
 
-        public MyExternalService(IConfiguration configuration)
+        public ApiKeyService(IConfiguration configuration)
         {
             apiKey = configuration["ExternalApiSettings:ApiKey"];
         }

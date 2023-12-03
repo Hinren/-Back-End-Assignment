@@ -1,6 +1,6 @@
 ﻿namespace GeoLocatorApiHub.Services.Interfaces
 {
-    public interface IMyExternalService
+    public interface IApiKeyService
     {
     }
 }

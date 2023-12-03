@@ -1,4 +1,5 @@
-﻿using GeoLocatorApiHub.Infrastructure.Entities;
+﻿using GeoLocatorApiHub.Common.Validation;
+using GeoLocatorApiHub.Infrastructure.Entities;
 using GeoLocatorApiHub.Infrastructure.Repositories;
 using GeoLocatorApiHub.Models;
 using GeoLocatorApiHub.Services.Interfaces;
@@ -11,6 +12,7 @@ namespace GeoLocatorApiHub.Services.Services
     {
         private readonly IGeoLocationRepository _geoLocationRepository;
         private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IpAddressValidator _ipAddressValidator = new IpAddressValidator();
 
         public GeoLocationService(IGeoLocationRepository geoLocationRepository, IHttpClientFactory httpClientFactory)
         {
@@ -42,6 +44,7 @@ namespace GeoLocatorApiHub.Services.Services
 
         public async Task AddGeoLocationAsync(string ipOrUrl, string? apiKey)
         {
+            _ipAddressValidator.Validate(ipOrUrl);
             string url = BuildUrlForGeoLocation(ipOrUrl, apiKey);
 
             var httpClient = _httpClientFactory.CreateClient();

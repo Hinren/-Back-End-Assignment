@@ -18,4 +18,8 @@
     <ProjectReference Include="..\GeoLocatorApiHub.Services\GeoLocatorApiHub.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Validation\" />
+  </ItemGroup>
+
 </Project>

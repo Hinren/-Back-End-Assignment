@@ -10,12 +10,12 @@ namespace GeoLocatorAPIHub.Controllers
     public class GeoLocationController : ControllerBase
     {
         private readonly IGeoLocationService _geoLocationService;
-        private readonly MyExternalService _externalService;
+        private readonly ApiKeyService _apiKeyService;
 
-        public GeoLocationController(IGeoLocationService geoLocationService, MyExternalService externalService)
+        public GeoLocationController(IGeoLocationService geoLocationService, ApiKeyService apiKeyService)
         {
             _geoLocationService = geoLocationService;
-            _externalService = externalService;
+            _apiKeyService = apiKeyService;
         }
 
         [HttpGet("{ipOrUrl}/latestGeoLocation")]
@@ -53,14 +53,9 @@ namespace GeoLocatorAPIHub.Controllers
         [HttpPost("{ip}")]
         public async Task<IActionResult> AddGeoLocation(string ip)
         {
-            if (!IsValidIpAddress(ip))
-            {
-                return BadRequest("Provided string is not a valid IPv4 or IPv6 address.");
-            }
-
             try
             {
-                await _geoLocationService.AddGeoLocationAsync(ip, _externalService.apiKey);
+                await _geoLocationService.AddGeoLocationAsync(ip, _apiKeyService.apiKey);
                 return CreatedAtAction(nameof(GetLatestGeoLocation), new { ipOrUrl = ip }, null);
             }
             catch (Exception ex)
@@ -85,11 +80,6 @@ namespace GeoLocatorAPIHub.Controllers
             {
                 return BadRequest(ex.Message);
             }
-        }
-
-        private bool IsValidIpAddress(string ipOrUrl)
-        {
-            return IPAddress.TryParse(ipOrUrl, out _);
         }
     }
 }
